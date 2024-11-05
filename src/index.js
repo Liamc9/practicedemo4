@@ -5,7 +5,7 @@ import React from 'react';
   import Root from './routes/Root';
   import Login from './routes/Login';
   import Home from './routes/Home';
-
+    import StripeProvider from './stripeProvider';
 
   const router = createBrowserRouter([
       { path: '', element: <Root />,
@@ -23,6 +23,8 @@ import React from 'react';
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
       <React.StrictMode>
+        <StripeProvider>
           <RouterProvider router={router} />
+          </StripeProvider>
       </React.StrictMode>
   );
